@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCERT Study Project | Class 6 & Class 9</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            max-width: 800px;
+        }
+        .feature-item {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem;
+            border-radius: 12px;
+            text-align: center;
+            color: white;
+        }
+        .feature-item .feat-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+        .feature-item h4 { margin-bottom: 0.3rem; }
+        .feature-item p { font-size: 0.8rem; opacity: 0.8; }
+        footer {
+            position: fixed;
+            bottom: 1rem;
+            text-align: center;
+            width: 100%;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="landing-container">
+        <h1 class="landing-title">📚 NCERT Study Project</h1>
+        <p class="landing-subtitle">Complete Chapter-wise Notes, Exercises & Formulas</p>
+        
+        <div class="class-cards">
+            <a href="class-6/index.html" class="class-card">
+                <div class="icon">🎒</div>
+                <h2>Class 6</h2>
+                <p>Maths • Science • Social Science • English</p>
+                <p style="margin-top:0.5rem; font-size:0.85rem; color:#4361ee;">10 Maths Chapters + All Subjects →</p>
+            </a>
+            
+            <a href="class-9/index.html" class="class-card">
+                <div class="icon">📖</div>
+                <h2>Class 9</h2>
+                <p>Maths • Science • Social Science • English</p>
+                <p style="margin-top:0.5rem; font-size:0.85rem; color:#4361ee;">15 Maths Chapters + All Subjects →</p>
+            </a>
+
+            <a href="class-10/index.html" class="class-card">
+                <div class="icon">📐</div>
+                <h2>Class 10</h2>
+                <p>Mathematics (Board Exam Focus)</p>
+                <p style="margin-top:0.5rem; font-size:0.85rem; color:#4361ee;">14 Maths Chapters — Detailed Notes →</p>
+            </a>
+        </div>
+        
+        <div class="feature-grid">
+            <div class="feature-item">
+                <div class="feat-icon">📝</div>
+                <h4>Step-by-Step</h4>
+                <p>Detailed solutions for every question</p>
+            </div>
+            <div class="feature-item">
+                <div class="feat-icon">📐</div>
+                <h4>All Formulas</h4>
+                <p>Maths formulas in one place</p>
+            </div>
+            <div class="feature-item">
+                <div class="feat-icon">🧠</div>
+                <h4>Mini Quizzes</h4>
+                <p>Test yourself after each chapter</p>
+            </div>
+            <div class="feature-item">
+                <div class="feat-icon">⚠️</div>
+                <h4>Common Mistakes</h4>
+                <p>Avoid errors students often make</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>Based on Latest NCERT Syllabus (2024-25) | Created for Learning Purposes</footer>
+</body>
+</html>

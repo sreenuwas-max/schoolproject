@@ -1,0 +1,198 @@
+/* ============================================================ */
+/*   CLASS-10 ONLY OVERRIDES                                     */
+/*   Linked only from class-10/index.html — does NOT affect      */
+/*   the home page, class-6 or class-9.                          */
+/*                                                               */
+/*   Every rule is scoped to a wrapper class `.c10-scope` so it  */
+/*   cannot leak into other pages even if this file is loaded    */
+/*   accidentally elsewhere.                                     */
+/* ============================================================ */
+
+/* 1) Style bare <div class="topics-header"> (used in Ch2–Ch14)
+   exactly like Ch1's .section-header.topics-header.            */
+.c10-scope .topics-header:not(.section-header) {
+  display: block;
+  margin: 2rem 0 1.5rem;
+  padding: 0.9rem 1.5rem;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, #e3f2fd 0%, #e8eaf6 100%);
+  border-left: 5px solid var(--primary);
+  color: var(--primary-dark);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.c10-scope .topics-header:not(.section-header) > h1,
+.c10-scope .topics-header:not(.section-header) > h2,
+.c10-scope .topics-header:not(.section-header) > h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* 2) <div class="section-header"><h1>…</h1></div> chapter banners
+   used at top of Ch2–14 — bring the h1 down to a sensible size. */
+.c10-scope .section-header > h1 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin: 0;
+  padding: 0;
+  line-height: 1.25;
+  letter-spacing: 0.2px;
+}
+
+.c10-scope .section-header > h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.c10-scope .section-header > p {
+  margin: 0.35rem 0 0;
+  font-size: 0.92rem;
+  font-weight: 400;
+  color: var(--gray);
+  line-height: 1.45;
+}
+
+/* Bare .section-header with no modifier class — soft neutral bg. */
+.c10-scope .section-header:not(.topics-header):not(.exercises-header) {
+  background: linear-gradient(135deg, #eef2ff 0%, #faf5ff 100%);
+  border-left: 5px solid var(--primary);
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* 3) Normalise heading sizes inside .topic-box across chapters. */
+.c10-scope .topic-box h2 {
+  font-size: 1.15rem;
+  color: var(--primary-dark);
+  margin: 0 0 0.8rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #e8eaf6;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.c10-scope .topic-box h3 {
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.c10-scope .topic-box h4 {
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+/* 4) Heading sizing inside example / question / answer / tip boxes. */
+.c10-scope .example-box h3,
+.c10-scope .example-box h4,
+.c10-scope .question-box h3,
+.c10-scope .question-box h4,
+.c10-scope .answer-box h3,
+.c10-scope .answer-box h4,
+.c10-scope .tip-box h3,
+.c10-scope .tip-box h4 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.c10-scope .example-box {
+  background: #fffaf0;
+  border-left: 4px solid #f59e0b;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1rem 1.25rem;
+  margin: 0.9rem 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.c10-scope .example-box p {
+  margin: 0.4rem 0;
+  line-height: 1.65;
+}
+
+/* 5) Inline-styled tables — give them a consistent appearance.
+   Note: NO !important so any chapter-specific override still wins. */
+.c10-scope .topic-box table,
+.c10-scope .example-box table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.8rem 0;
+  font-size: 0.9rem;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.c10-scope .topic-box table th,
+.c10-scope .example-box table th {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.6rem 0.9rem;
+  text-align: left;
+  border: 1px solid var(--primary-dark);
+}
+
+.c10-scope .topic-box table td,
+.c10-scope .example-box table td {
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #e2e8f0;
+  color: var(--dark);
+}
+
+/* 6) Centre SVG figures inside topic / example boxes. */
+.c10-scope .topic-box svg,
+.c10-scope .example-box svg {
+  display: block;
+  margin: 1rem auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 7) Anchor links — leave room below the sticky header. */
+.c10-scope .section-header[id],
+.c10-scope .topics-header[id],
+.c10-scope .topic-box[id] {
+  scroll-margin-top: 80px;
+}
+
+/* 8) Dark mode counterparts. */
+body.dark .c10-scope .topics-header:not(.section-header),
+body.dark .c10-scope .section-header:not(.topics-header):not(.exercises-header) {
+  background: linear-gradient(135deg, #1e293b 0%, #312e81 100%);
+  color: #e0e7ff;
+}
+
+body.dark .c10-scope .topics-header:not(.section-header) > h1,
+body.dark .c10-scope .topics-header:not(.section-header) > h2,
+body.dark .c10-scope .topics-header:not(.section-header) > h3,
+body.dark .c10-scope .section-header > h1,
+body.dark .c10-scope .section-header > h2 {
+  color: #e0e7ff;
+}
+
+body.dark .c10-scope .section-header > p {
+  color: #cbd5e1;
+}
+
+body.dark .c10-scope .topic-box h2 {
+  color: #c7d2fe;
+  border-bottom-color: #334155;
+}
+
+body.dark .c10-scope .example-box {
+  background: #1f2937;
+  border-left-color: #f59e0b;
+  color: #f3f4f6;
+}
